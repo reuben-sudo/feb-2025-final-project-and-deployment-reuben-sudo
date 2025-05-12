@@ -1,0 +1,493 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #add8e6;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+    color: #007bff;
+}
+
+main {
+    padding: 20px;
+    flex-grow: 1;
+    padding-bottom: 70px; /* Increased bottom padding to accommodate the fixed footer */
+}
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.75em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.hero-text .tagline {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 1.5em;
+    font-size: 1.1em;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    width: 240px;
+    height: 240px;
+    border-radius: 60%;
+    border: 5px solid #add8e6;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills {
+    margin-top: 30px;
+    padding: 30px;
+    padding-bottom: 70px; /* Ensure enough space for skills content */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.skills h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #007bff;
+    font-size: 2.2em;
+    margin-bottom: 1em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5em;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    color: #555;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills-list li {
+    background-color: #e9f7ff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #bde4ff;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.project-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+}
+
+.project-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.project-item h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.project-item p {
+    color: #555;
+    line-height: 1.5;
+}
+
+.button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.contact-content {
+    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 100px; /* Increased bottom margin */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+}
+
+.contact-form h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #007bff;
+    font-size: 2.2em;
+    margin-bottom: 1em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5em;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-info {
+    margin-top: 30px;
+    line-height: 1.7;
+    text-align: center;
+    color: #555;
+}
+
+.contact-info h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #007bff;
+    font-size: 2em;
+    margin-bottom: 0.75em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5em;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    display: inline;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5em 0;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    color: #add8e6;
+    font-size: 0.9em;
+}
+
+/* -------------------------------------------------- */
+/* Styles specifically for the About Me page */
+/* -------------------------------------------------- */
+
+.about-content {
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 80px; /* Adjust as needed for footer spacing */
+    background-color: #f9f9f9; /* A slightly different background */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.about-content h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333; /* Darker heading color */
+    font-size: 2.0em; /* Slightly smaller heading */
+    margin-bottom: 1em;
+    border-bottom: 2px solid #ddd; /* Lighter divider */
+    padding-bottom: 0.5em;
+    text-align: left;
+}
+
+.about-content .bio {
+    display: flex;
+    gap: 30px;
+    align-items: center; /* Vertically align text and image */
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.about-content .bio .hero-text {
+    flex: 2; /* Give more space to text */
+    line-height: 1.7;
+    color: #555;
+}
+
+.about-content .bio .hero-text p {
+    margin-bottom: 1em;
+}
+
+.about-content .bio .hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-content .bio .hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Keep it circular if you prefer */
+    border: 5px solid #eee; /* A softer border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about-content .education,
+.about-content .experience {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.about-content .education ul,
+.about-content .experience ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-content .education li,
+.about-content .experience li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    color: #555;
+}
+
+.about-content .education li:last-child,
+.about-content .experience li:last-child {
+    border-bottom: none;
+}
+
+.about-content .experience li strong {
+    font-weight: bold;
+    color: #333;
+}
+/* About Page - Expandable Sections Styling */
+.about-content .education li span,
+.about-content .experience li span {
+    display: inline-block;
+    width: 80%; /* Adjust as needed */
+}
+
+.about-content .education li button.expand-button,
+.about-content .experience li button.expand-button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 0;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.about-content .education li .details,
+.about-content .experience li .details {
+    margin-top: 10px;
+    padding-left: 20px;
+    color: #555;
+}
+
+/* -------------------------------------------------- */
+/* Styles specifically for the Projects page */
+/* -------------------------------------------------- */
+
+.projects-content {
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 80px; /* Adjust as needed for footer spacing */
+    background-color: #f9f9f9; /* A slightly different background */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.projects-content h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333; /* Darker heading color */
+    font-size: 2.0em; /* Slightly smaller heading */
+    margin-bottom: 1em;
+    border-bottom: 2px solid #ddd; /* Lighter divider */
+    padding-bottom: 0.5em;
+    text-align: left;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust min width as needed */
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.project-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+}
+
+.project-item h3 {
+    margin-top: 0;
+    color: #007bff; /* Project title color */
+    margin-bottom: 0.5em;
+}
+
+.project-item p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+.project-item ul {
+    list-style: disc;
+    padding-left: 20px;
+    color: #777;
+    margin-bottom: 1em;
+}
+
+.project-item ul li {
+    margin-bottom: 0.3em;
+}
+
+.project-item a {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: auto; /* Push the link to the bottom */
+    transition: background-color 0.3s ease;
+}
+
+.project-item a:hover {
+    background-color: #0056b3;
+}
+
+/* If you want a specific style for the download link */
+.project-item a[download] {
+    background-color: #28a745; /* Green color for download */
+}
+
+.project-item a[download]:hover {
+    background-color: #1e7e34;
+}
